@@ -32,4 +32,4 @@ function useGlobalContext() {
   return context
 }
 
-export { GlobalProvider, useGlobalContext }
+export { GlobalProvider, useGlobalContext, API_URL }

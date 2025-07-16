@@ -1,19 +1,22 @@
 import { useGlobalContext } from "../context/GlobalContext"
 
+import CardCars from "../components/CarCard"
+
 export default function Homepage() {
 
   const { cars = [] } = useGlobalContext()
 
   return (
     <>
-      <h1>Homepage</h1>
 
-      <div className="container">
-        <ul>
+
+      <div className="container my-4">
+        <div className="row row-cols-3">
+
           {cars.map((c, i) => (
-            <li key={i}>{c.title}<span>{c.category}</span></li>
+            <CardCars key={i} car={c} />
           ))}
-        </ul>
+        </div>
       </div>
 
 

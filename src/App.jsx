@@ -5,6 +5,7 @@ import DefaulLayout from "./layouts/DefaultLayouts"
 
 // pages
 import Homepage from "./pages/Homepage"
+import ProductDetail from "./pages/ProductDetails"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route Component={DefaulLayout} >
             <Route path="/" Component={Homepage} />
+            <Route path="/:id" Component={ProductDetail} />
 
           </Route>
         </Routes>
