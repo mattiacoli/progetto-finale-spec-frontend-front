@@ -6,11 +6,12 @@ export default function Homepage() {
 
   const { cars = [] } = useGlobalContext()
 
+
   return (
     <>
-
-
       <div className="container my-4">
+
+
         <div className="row row-cols-3">
 
           {cars.map((c, i) => (

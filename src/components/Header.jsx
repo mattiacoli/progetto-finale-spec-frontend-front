@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRef } from 'react'
 
 export default function Header() {
@@ -7,7 +7,9 @@ export default function Header() {
 
   return (
     <header className="d-flex justify-content-between">
-      <h3><strong>Car</strong>Bool</h3>
+      <Link to={"/"} className="text-decoration-none text-white">
+        <h3><strong>Car</strong>Bool</h3>
+      </Link>
 
       <input
         type="text"
@@ -15,6 +17,7 @@ export default function Header() {
         className="p-2 rounded-5"
         ref={inputRef}
       />
+
     </header>
   )
 }
