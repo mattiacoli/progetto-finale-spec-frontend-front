@@ -1,14 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import DefaulLayout from "./layouts/DefaultLayouts"
 
+
+// pages
+import Homepage from "./pages/Homepage"
 
 function App() {
 
 
   return (
-    <>
-      <h1>Progetto Finale</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={DefaulLayout} >
+          <Route path="/" Component={Homepage} />
 
-    </>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
