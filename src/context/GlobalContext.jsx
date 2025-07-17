@@ -5,14 +5,13 @@ const GlobalContext = createContext()
 const API_URL = 'http://localhost:3001/cars'
 
 function GlobalProvider({ children }) {
-
+  // state
   const [allCars, setAllCars] = useState([])
   const [cars, setCars] = useState([])
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
 
-
-
+  // intial fetch
   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
@@ -23,6 +22,7 @@ function GlobalProvider({ children }) {
       .catch(err => console.error(err))
   }, [])
 
+  // Search handler
   const handleSearch = (e) => {
     const newQuery = e.target.value
     setQuery(newQuery)
@@ -41,6 +41,7 @@ function GlobalProvider({ children }) {
       .catch(err => console.error('Errore nella ricerca:', err))
   }
 
+  // select category handler
   async function handleClick(e) {
     const selectedCategory = e.target.value
     setCategory(selectedCategory)
