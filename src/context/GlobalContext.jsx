@@ -11,6 +11,8 @@ function GlobalProvider({ children }) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
 
+
+
   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
@@ -24,16 +26,19 @@ function GlobalProvider({ children }) {
   const handleSearch = (e) => {
     const newQuery = e.target.value
     setQuery(newQuery)
+
+
     if (!newQuery || newQuery.trim() === '') {
       setCars(allCars)
       return
     }
-    fetch(`${API_URL}?search=${query}`)
+
+    const searchParams = `search=${newQuery}${category ? `&category=${category}` : ''}`
+
+    fetch(`${API_URL}?${searchParams}`)
       .then(res => res.json())
-      .then(data => {
-        setCars(data)
-      })
-      .catch(err => console.error(err))
+      .then(data => setCars(data))
+      .catch(err => console.error('Errore nella ricerca:', err))
   }
 
   async function handleClick(e) {
