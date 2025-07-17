@@ -4,7 +4,7 @@ import CardCars from "../components/CarCard"
 
 export default function Homepage() {
 
-  const { cars = [] } = useGlobalContext()
+  const { cars } = useGlobalContext()
 
 
   return (
