@@ -26,8 +26,12 @@
 }
 
 .favoriteItem {
+  display: flex;
   padding: 10px;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #f0f0f0;
+
 }
 
 .favoriteItem:last-child {

@@ -1,4 +1,5 @@
 import { createPortal } from "react-dom"
+import { Link } from "react-router-dom"
 import styles from "./Favorites.module.css"
 
 export default function Favorites({ show, favorites, remove }) {
@@ -10,7 +11,9 @@ export default function Favorites({ show, favorites, remove }) {
           {favorites.length > 0 ? (
             favorites.map(f => (
               <li key={f.id} className={styles.favoriteItem}>
-                {f.title}
+                <Link to={`/${f.id}`} className="text-decoration-none text-black">
+                  {f.title}
+                </Link>
                 <button className="btn btn-danger" onClick={() => remove(f.id)}><i className="bi bi-trash"></i></button>
               </li>
             ))
