@@ -10,6 +10,7 @@ function GlobalProvider({ children }) {
   const [cars, setCars] = useState([])
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
+  const [favorites, setFavorites] = useState([])
 
   // intial fetch
   useEffect(() => {
@@ -59,9 +60,15 @@ function GlobalProvider({ children }) {
     }
   }
 
+
+  // addFavorites
+  function addFavorites(car) {
+    setFavorites([...favorites, car])
+  }
+
   return (
     <GlobalContext.Provider
-      value={{ allCars, cars, setCars, handleSearch, query, handleClick }}>
+      value={{ allCars, cars, setCars, handleSearch, query, handleClick, favorites, addFavorites }}>
       {children}
     </GlobalContext.Provider>
 

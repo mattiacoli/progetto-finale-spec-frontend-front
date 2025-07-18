@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { API_URL, useGlobalContext } from "../context/GlobalContext"
-
 import CardCars from "../components/CarCard"
 
 export default function Homepage() {
 
-  const { cars, handleClick, setCars } = useGlobalContext()
+  const { cars, handleClick, addFavorites } = useGlobalContext()
 
   const [sortOrder, setSortOrder] = useState("asc")
   const [sortField, setSortField] = useState("title")
+
+
 
 
   const handleSort = () => {
@@ -27,6 +28,7 @@ export default function Homepage() {
   return (
     <>
       <div className="container my-4">
+
 
 
         <div className="category mb-3 d-flex justify-content-center gap-2">
@@ -66,7 +68,7 @@ export default function Homepage() {
         <div className="row row-cols-3">
 
           {sortedCars.map((c, i) => (
-            <CardCars key={i} car={c} />
+            <CardCars key={i} car={c} addFavorites={addFavorites} />
           ))}
         </div>
       </div>
