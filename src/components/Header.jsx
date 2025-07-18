@@ -24,6 +24,8 @@ export default function Header() {
 
         <button className="nav-link fs-2" onClick={toggleFavorites}><i className="bi bi-heart"></i></button>
 
+
+
         <input
           type="text"
           placeholder="Cerca..."

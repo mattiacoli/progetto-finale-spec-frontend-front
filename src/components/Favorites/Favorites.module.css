@@ -1,0 +1,41 @@
+.overlay {
+  position: fixed;
+  top: 7rem;
+  /* Posizionato sotto l'header */
+  right: 100px;
+  /* Allineato con il bottone a cuore */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  z-index: 1000;
+  /* Sopra a ogni elemento della pagina */
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.container {
+  padding: 0;
+}
+
+.favoritesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favoriteItem {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.favoriteItem:last-child {
+  border-bottom: none;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
