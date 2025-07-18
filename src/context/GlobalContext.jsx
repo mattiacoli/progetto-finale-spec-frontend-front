@@ -66,9 +66,13 @@ function GlobalProvider({ children }) {
     setFavorites([...favorites, car])
   }
 
+  function removeFavorite(id) {
+    setFavorites(favorites.filter(f => f.id != id))
+  }
+
   return (
     <GlobalContext.Provider
-      value={{ allCars, cars, setCars, handleSearch, query, handleClick, favorites, addFavorites }}>
+      value={{ allCars, cars, setCars, handleSearch, query, handleClick, favorites, addFavorites, removeFavorite }}>
       {children}
     </GlobalContext.Provider>
 

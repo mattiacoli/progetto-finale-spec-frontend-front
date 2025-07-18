@@ -6,7 +6,7 @@ import Favorites from "./Favorites/Favorites";
 
 export default function Header() {
 
-  const { handleSearch, query, favorites } = useGlobalContext()
+  const { handleSearch, query, favorites, removeFavorite } = useGlobalContext()
   const [isVisible, setIsVisible] = useState(false)
 
   const toggleFavorites = () => {
@@ -36,7 +36,7 @@ export default function Header() {
 
       </div>
 
-      <Favorites show={isVisible} favorites={favorites} />
+      <Favorites show={isVisible} favorites={favorites} remove={removeFavorite} />
 
 
     </header>
