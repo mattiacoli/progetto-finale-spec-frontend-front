@@ -4,7 +4,7 @@ import CardCars from "../components/CarCard"
 
 export default function Homepage() {
 
-  const { cars, handleClick, addFavorites, favorites } = useGlobalContext()
+  const { handleSearch, query, cars, handleClick, addFavorites, favorites } = useGlobalContext()
 
   const [sortOrder, setSortOrder] = useState("asc")
   const [sortField, setSortField] = useState("title")
@@ -55,6 +55,17 @@ export default function Homepage() {
   return (
     <>
       <div className="container my-4">
+
+        <div className="searchbar mb-3 d-flex justify-content-center">
+
+          <input
+            type="text"
+            placeholder="Cerca..."
+            className="form-control p-2 rounded-5"
+            value={query}
+            onChange={handleSearch}
+          />
+        </div>
 
 
         {/* Category Link */}
@@ -123,7 +134,7 @@ export default function Homepage() {
           <div className="comparator">
             <div className="row">
               {carsToCompare.map(c => (
-                <div className="col">
+                <div className="col" key={c.id}>
                   <h2>{c.title}</h2>
                   <p>{c.price}</p>
                   <p>{c.description}</p>

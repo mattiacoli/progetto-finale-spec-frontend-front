@@ -6,7 +6,7 @@ import Favorites from "./Favorites/Favorites";
 
 export default function Header() {
 
-  const { handleSearch, query, favorites, removeFavorite } = useGlobalContext()
+  const { favorites, removeFavorite } = useGlobalContext()
   const [isVisible, setIsVisible] = useState(false)
 
   const toggleFavorites = () => {
@@ -14,26 +14,15 @@ export default function Header() {
   }
 
   return (
-    <header className="d-flex justify-content-between">
-      <Link to={"/"} className="text-decoration-none text-white">
-        <h3><strong>Car</strong>Bool</h3>
+    <header className="d-flex justify-content-around ">
+
+
+      <Link to={"/"} className="logo_link text-decoration-none text-white d-flex">
+        <h1>CarBool</h1>
       </Link>
 
-      <div className="utilities d-flex gap-3">
-
-
-        <button className="nav-link fs-2" onClick={toggleFavorites}><i className={`bi ${favorites.length > 0 ? "bi-heart-fill" : "bi-heart"}`}></i></button>
-
-
-
-        <input
-          type="text"
-          placeholder="Cerca..."
-          className="p-2 rounded-5"
-          value={query}
-          onChange={handleSearch}
-        />
-
+      <div className="favorites d-flex gap-3 ms-auto">
+        <button className="nav-link fs-2" onClick={toggleFavorites}><i className={`bi text-white ${favorites.length > 0 ? "bi-bookmark-fill" : "bi-bookmark"}`}></i></button>
       </div>
 
       <Favorites show={isVisible} favorites={favorites} remove={removeFavorite} />

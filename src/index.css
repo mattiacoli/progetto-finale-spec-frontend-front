@@ -9,6 +9,10 @@
 
 header {
   padding: 1rem;
-  background-color: burlywood;
+  background-color: rgb(31, 52, 109);
   text-align: center;
+
+  .logo_link {
+    font-family: 'Bungee Shade', system-ui;
+  }
 }
