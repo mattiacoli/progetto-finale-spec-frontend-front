@@ -63,6 +63,10 @@ function GlobalProvider({ children }) {
 
   // addFavorites
   function addFavorites(car) {
+    if (favorites.includes(car)) {
+      removeFavorite(car.id)
+      return
+    }
     setFavorites([...favorites, car])
   }
 

@@ -26,6 +26,8 @@ export default function ProductDetail() {
 
       <p>{selectedCar?.description}</p>
 
+      <img src={selectedCar.image} alt="" />
+
     </div>
   )
 }

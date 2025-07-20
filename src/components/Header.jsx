@@ -22,7 +22,7 @@ export default function Header() {
       <div className="utilities d-flex gap-3">
 
 
-        <button className="nav-link fs-2" onClick={toggleFavorites}><i className="bi bi-heart"></i></button>
+        <button className="nav-link fs-2" onClick={toggleFavorites}><i className={`bi ${favorites.length > 0 ? "bi-heart-fill" : "bi-heart"}`}></i></button>
 
 
 

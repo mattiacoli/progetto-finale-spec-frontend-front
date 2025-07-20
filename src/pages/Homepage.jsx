@@ -4,11 +4,10 @@ import CardCars from "../components/CarCard"
 
 export default function Homepage() {
 
-  const { cars, handleClick, addFavorites } = useGlobalContext()
+  const { cars, handleClick, addFavorites, favorites } = useGlobalContext()
 
   const [sortOrder, setSortOrder] = useState("asc")
   const [sortField, setSortField] = useState("title")
-
 
 
 
@@ -68,7 +67,7 @@ export default function Homepage() {
         <div className="row row-cols-3">
 
           {sortedCars.map((c, i) => (
-            <CardCars key={i} car={c} addFavorites={addFavorites} />
+            <CardCars key={i} car={c} addFavorites={addFavorites} favorites={favorites} />
           ))}
         </div>
       </div>
