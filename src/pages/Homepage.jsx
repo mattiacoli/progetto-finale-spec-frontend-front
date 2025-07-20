@@ -8,8 +8,18 @@ export default function Homepage() {
 
   const [sortOrder, setSortOrder] = useState("asc")
   const [sortField, setSortField] = useState("title")
+  const [idsToCompare, setIdsToCompare] = useState([])
+  const [carsToCompare, setCarsToCompare] = useState([])
 
 
+  const handleCompare = (carId) => {
+    if (!idsToCompare.includes(carId)) {
+      setIdsToCompare(prev => [...prev, carId])
+    } else {
+      setIdsToCompare(prev => prev.filter(id => id !== carId))
+    }
+  }
+  console.log(idsToCompare);
 
   const handleSort = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'))
@@ -23,13 +33,31 @@ export default function Homepage() {
     }
   })
 
+  const getComparison = async (ids) => {
+    const carPromises = ids.map(id => {
+      return fetch(`${API_URL}/${id}`).then(res => res.json())
+    })
+
+    const carResponses = await Promise.allSettled(carPromises)
+
+    const cars = carResponses.map(car => car.value.car)
+
+    console.log('Cars to compare:', carsToCompare)
+
+
+    setCarsToCompare(cars)
+
+  }
+
+
+
 
   return (
     <>
       <div className="container my-4">
 
 
-
+        {/* Category Link */}
         <div className="category mb-3 d-flex justify-content-center gap-2">
           <button className="btn btn-outline-primary" value="compatta" onClick={handleClick}>Compatta</button>
           <button className="btn btn-outline-primary" value="berlina" onClick={handleClick}>Berlina</button>
@@ -37,39 +65,77 @@ export default function Homepage() {
           <button className="btn btn-outline-primary" value="" onClick={handleClick}>Tutte</button>
         </div>
 
-
+        {/* Sort Action */}
         <div className="sort mb-3 d-flex gap-2 align-item-center">
-          <button className="btn btn-outline-secondary" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>.
-          <label htmlFor="title" className="p-2">
-            <input
-              className="me-1"
-              type="radio"
-              id="title"
-              name="sortField"
-              value='title'
-              checked={sortField === 'title'}
-              onChange={(e) => setSortField(e.target.value)} />
-            Nome
-          </label>
-          <label htmlFor="category" className="p-2 ">
-            <input
-              className="me-1"
-              type="radio"
-              id="category"
-              name="sortField"
-              value='category'
-              checked={sortField === 'category'}
-              onChange={(e) => setSortField(e.target.value)} />
-            Categoria
-          </label>
+          <div className="sort_action">
+            <button className="btn btn-outline-secondary" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>.
+            <label htmlFor="title" className="p-2">
+              <input
+                className="me-1"
+                type="radio"
+                id="title"
+                name="sortField"
+                value='title'
+                checked={sortField === 'title'}
+                onChange={(e) => setSortField(e.target.value)} />
+              Nome
+            </label>
+            <label htmlFor="category" className="p-2 ">
+              <input
+                className="me-1"
+                type="radio"
+                id="category"
+                name="sortField"
+                value='category'
+                checked={sortField === 'category'}
+                onChange={(e) => setSortField(e.target.value)} />
+              Categoria
+            </label>
+          </div>
+
+          {/* Compare Button */}
+          <button
+            className="btn btn-primary"
+            onClick={() => getComparison(idsToCompare)}
+          >Compara</button>
+
         </div>
 
+
+
+
+        {/* Cards */}
         <div className="row row-cols-3">
 
           {sortedCars.map((c, i) => (
-            <CardCars key={i} car={c} addFavorites={addFavorites} favorites={favorites} />
+            <CardCars key={i}
+              car={c}
+              addFavorites={addFavorites}
+              favorites={favorites}
+              checked={idsToCompare.includes(c.id)}
+              onToggle={handleCompare}
+            />
           ))}
         </div>
+
+
+        {carsToCompare.length > 0 && (
+          <div className="comparator">
+            <div className="row">
+              {carsToCompare.map(c => (
+                <div className="col">
+                  <h2>{c.title}</h2>
+                  <p>{c.price}</p>
+                  <p>{c.description}</p>
+                </div>
+
+
+              ))}
+            </div>
+          </div>
+
+        )}
+        {/* Comparator */}
       </div>
 
 
