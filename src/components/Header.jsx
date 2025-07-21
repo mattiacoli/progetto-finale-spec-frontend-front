@@ -16,8 +16,11 @@ export default function Header() {
   return (
     <header className="d-flex justify-content-between shadow">
 
+      <div className="invisible">
+        <h1 className="invisible">CarBool</h1>
+      </div>
 
-      <Link to={"/"} className="logo_link text-decoration-none text-white">
+      <Link to={"/"} className="logo_link text-decoration-none text-white position-absolute start-50 translate-middle-x">
         <h1 className="text-center">CarBool</h1>
       </Link>
 

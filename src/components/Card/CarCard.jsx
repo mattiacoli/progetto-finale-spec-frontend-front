@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import styles from "./CarCard.module.css"
 
 
 export default function CardCars({ car, addFavorites, favorites, checked, onToggle }) {
@@ -13,25 +14,25 @@ export default function CardCars({ car, addFavorites, favorites, checked, onTogg
 
   return (
     <>
-      <div to={`/${car.id}`} className="col mb-3">
-        <div className="card text-start mb-3">
-          <Link to={`/${car.id}`} className="card-header text-decoration-none d-flex justify-content-between">
-            <h4 className="card-title">{car.title}</h4>
+      <div className={`col mb-3 ${styles.cardContainer}`}>
+        <div className={`${styles.card}`}>
+          <Link to={`/${car.id}`} className={`${styles.cardHeader} text-decoration-none d-flex justify-content-between`}>
+            <h4 className={styles.cardTitle}>{car.title}</h4>
           </Link>
-          <div className="card-body">
-            <p className="card-text">{car.category}</p>
+          <div className={styles.cardBody}>
+            <p className={styles.cardText}>{car.category}</p>
           </div>
-          <div className="card-footer d-flex justify-content-between">
+          <div className={`${styles.cardFooter} d-flex justify-content-between align-items-center`}>
             <input
               type="checkbox"
               checked={checked}
               onChange={() => onToggle(car.id)}
-              className='form-check-input'
+              className={`form-check-input ${styles.checkbox}`}
             />
             <button
-              className="btn btn-outline-primary"
+              className={`${styles.favoriteBtn}`}
               onClick={handleAddToFavorites}>
-              <i className={`bi ${isInFavorite ? 'bi-bookmark-fill' : 'bi-bookmark'}`}></i>
+              <i className={`bi ${isInFavorite ? 'bi-bookmark-fill ' + styles.filledIcon : 'bi-bookmark'} ${styles.favoriteIcon}`}></i>
             </button>
           </div>
         </div>
