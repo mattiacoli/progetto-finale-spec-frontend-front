@@ -11,7 +11,7 @@ export default function Favorites({ show, favorites, remove }) {
           {favorites.length > 0 ? (
             favorites.map(f => (
               <li key={f.id} className={styles.favoriteItem}>
-                <Link to={`/${f.id}`} className="text-decoration-none text-black">
+                <Link to={`/${f.id}`} className="text-decoration-none text-white">
                   {f.title}
                 </Link>
                 <button className="btn btn-danger" onClick={() => remove(f.id)}><i className="bi bi-trash"></i></button>

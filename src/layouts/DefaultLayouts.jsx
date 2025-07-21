@@ -6,7 +6,7 @@ export default function DefaulLayout() {
     <>
       <Header />
 
-      <main>
+      <main style={{ marginTop: "10rem" }}>
         <Outlet />
       </main>
 

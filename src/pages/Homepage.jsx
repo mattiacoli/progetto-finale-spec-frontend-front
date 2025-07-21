@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { API_URL, useGlobalContext } from "../context/GlobalContext"
 import CardCars from "../components/CarCard"
+import ComparatorCard from "../components/ComparatorCard"
 
 export default function Homepage() {
 
@@ -11,6 +12,16 @@ export default function Homepage() {
   const [idsToCompare, setIdsToCompare] = useState([])
   const [carsToCompare, setCarsToCompare] = useState([])
 
+  const comparatorRef = useRef()
+
+
+  const scrollToComparator = () => {
+    if (comparatorRef.current) {
+      comparatorRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const category = ["compatta", "berlina", "suv"]
 
   const handleCompare = (carId) => {
     if (!idsToCompare.includes(carId)) {
@@ -33,19 +44,33 @@ export default function Homepage() {
     }
   })
 
+  // Aggiungi questo effetto che monitora i cambiamenti in carsToCompare
+  useEffect(() => {
+    if (carsToCompare.length > 0) {
+      // Piccolo timeout per dare tempo al DOM di renderizzare
+      setTimeout(() => {
+        if (comparatorRef.current) {
+          comparatorRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    }
+  }, [carsToCompare]);
+
   const getComparison = async (ids) => {
+    if (ids.length === 0) return;
+
     const carPromises = ids.map(id => {
       return fetch(`${API_URL}/${id}`).then(res => res.json())
     })
 
     const carResponses = await Promise.allSettled(carPromises)
-
     const cars = carResponses.map(car => car.value.car)
 
-    console.log('Cars to compare:', carsToCompare)
+    console.log('Cars to compare:', cars)
 
 
     setCarsToCompare(cars)
+
 
   }
 
@@ -61,7 +86,7 @@ export default function Homepage() {
           <input
             type="text"
             placeholder="Cerca..."
-            className="form-control p-2 rounded-5"
+            className="form-control p-2 rounded-5 text-white"
             value={query}
             onChange={handleSearch}
           />
@@ -70,16 +95,17 @@ export default function Homepage() {
 
         {/* Category Link */}
         <div className="category mb-3 d-flex justify-content-center gap-2">
-          <button className="btn btn-outline-primary" value="compatta" onClick={handleClick}>Compatta</button>
-          <button className="btn btn-outline-primary" value="berlina" onClick={handleClick}>Berlina</button>
-          <button className="btn btn-outline-primary" value="suv" onClick={handleClick}>Suv</button>
-          <button className="btn btn-outline-primary" value="" onClick={handleClick}>Tutte</button>
+          {category.map((c, i) => (
+            <button key={i} className="btn btn-outline-light" value={c} onClick={handleClick}>{c.toUpperCase()}</button>
+          ))}
+          <button className="btn btn-outline-light" value="" onClick={handleClick}>TUTTE</button>
         </div>
 
+
         {/* Sort Action */}
-        <div className="sort mb-3 d-flex gap-2 align-item-center">
+        <div className="sort mb-3 d-flex gap-2 align-item-center justify-content-between">
           <div className="sort_action">
-            <button className="btn btn-outline-secondary" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>.
+            <button className="btn btn-light" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>
             <label htmlFor="title" className="p-2">
               <input
                 className="me-1"
@@ -129,24 +155,19 @@ export default function Homepage() {
           ))}
         </div>
 
+        {/* Comparator */}
+        <section>
 
-        {carsToCompare.length > 0 && (
-          <div className="comparator">
-            <div className="row">
-              {carsToCompare.map(c => (
-                <div className="col" key={c.id}>
-                  <h2>{c.title}</h2>
-                  <p>{c.price}</p>
-                  <p>{c.description}</p>
-                </div>
-
-
-              ))}
+          <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
+            <h1 className="text-center mb-3">COMPARATORE</h1>
+            <hr />
+            <div className="row my-4">
+              <ComparatorCard carsToCompare={carsToCompare} />
             </div>
           </div>
 
-        )}
-        {/* Comparator */}
+        </section>
+
       </div>
 
 

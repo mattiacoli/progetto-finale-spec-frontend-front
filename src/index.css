@@ -7,12 +7,74 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
+.form-control::placeholder {
+
+  color: white;
+  opacity: 1;
+
+}
+
+body {
+  background-color: #1F346D;
+  color: white;
+
+}
+
+
+
 header {
-  padding: 1rem;
-  background-color: rgb(31, 52, 109);
-  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 1.5rem;
+  background: #1F346D;
+  background: linear-gradient(106deg, #1f346de3 0%, rgba(21, 124, 189, 1) 100%);
+  backdrop-filter: blur(3px);
+
 
   .logo_link {
     font-family: 'Bungee Shade', system-ui;
   }
+
+
+  .badge-counter {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--bs-danger);
+    border: 1px solid var(--mhd-lighter);
+  }
+}
+
+
+
+main {
+
+  input {
+    background-color: rgba(0, 0, 0, 0.301) !important;
+  }
+
+  .comparator {
+    margin-top: 2rem;
+    background-color: #c9d5f7;
+    padding: 2rem;
+    border-radius: 3rem;
+
+    color: #1F346D;
+  }
+
 }
