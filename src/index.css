@@ -79,4 +79,9 @@ main {
     color: #1F346D;
   }
 
+  .jumbotron {
+    padding: 2rem;
+    background-color: #0a173a;
+  }
+
 }

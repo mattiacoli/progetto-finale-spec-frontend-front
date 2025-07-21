@@ -38,10 +38,9 @@ export default function Homepage() {
     }
   })
 
-  // Aggiungi questo effetto che monitora i cambiamenti in carsToCompare
+
   useEffect(() => {
     if (carsToCompare.length > 0) {
-      // Piccolo timeout per dare tempo al DOM di renderizzare
       setTimeout(() => {
         if (comparatorRef.current) {
           comparatorRef.current.scrollIntoView({ behavior: "smooth" });
@@ -136,7 +135,7 @@ export default function Homepage() {
         {/* Cards */}
         <div className="row row-cols-3">
 
-          {sortedCars.map((c, i) => (
+          {sortedCars.length > 0 ? sortedCars.map((c, i) => (
             <CardCars key={i}
               car={c}
               addFavorites={addFavorites}
@@ -144,7 +143,9 @@ export default function Homepage() {
               checked={idsToCompare.includes(c.id)}
               onToggle={handleCompare}
             />
-          ))}
+          )) : (
+            <p className="text-center fs-4">Nessun risultato trovato</p>
+          )}
         </div>
 
         {/* Comparator */}
@@ -153,7 +154,7 @@ export default function Homepage() {
           <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
             <h1 className="text-center mb-3">COMPARATORE</h1>
             <hr />
-            <div className="row my-4">
+            <div className="row row-cols-3 my-4 gy-3">
               <ComparatorCard carsToCompare={carsToCompare} />
             </div>
           </div>
