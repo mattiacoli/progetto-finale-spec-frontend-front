@@ -14,7 +14,7 @@ export default function ComparatorCard({ carsToCompare }) {
 
               </div>
 
-              <h2 className="card-title">{c.title}</h2>
+              <h2 className="card-title fw-bold">{c.title}</h2>
               <p>{c.description}</p>
               <table class="table">
 

@@ -15,12 +15,6 @@ export default function Homepage() {
   const comparatorRef = useRef()
 
 
-  const scrollToComparator = () => {
-    if (comparatorRef.current) {
-      comparatorRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const category = ["compatta", "berlina", "suv"]
 
   const handleCompare = (carId) => {
@@ -30,8 +24,8 @@ export default function Homepage() {
       setIdsToCompare(prev => prev.filter(id => id !== carId))
     }
   }
-  console.log(idsToCompare);
 
+  // Sort handler and order
   const handleSort = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'))
   }
@@ -68,9 +62,7 @@ export default function Homepage() {
 
     console.log('Cars to compare:', cars)
 
-
     setCarsToCompare(cars)
-
 
   }
 

@@ -10,7 +10,11 @@ function GlobalProvider({ children }) {
   const [cars, setCars] = useState([])
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = localStorage.getItem("cars")
+    return storedFavorites ? JSON.parse(storedFavorites) : []
+  })
+
 
   // intial fetch
   useEffect(() => {
@@ -22,6 +26,10 @@ function GlobalProvider({ children }) {
       })
       .catch(err => console.error(err))
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem("cars", JSON.stringify(favorites));
+  }, [favorites]);
 
   // Search handler
   const handleSearch = (e) => {
@@ -68,6 +76,7 @@ function GlobalProvider({ children }) {
       return
     }
     setFavorites([...favorites, car])
+
   }
 
   function removeFavorite(id) {
