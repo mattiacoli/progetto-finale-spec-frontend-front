@@ -14,11 +14,11 @@ export default function Header() {
   }
 
   return (
-    <header className="d-flex shadow">
+    <header className="d-flex justify-content-between shadow">
 
 
-      <Link to={"/"} className="logo_link text-decoration-none text-white d-flex">
-        <h1>CarBool</h1>
+      <Link to={"/"} className="logo_link text-decoration-none text-white">
+        <h1 className="text-center">CarBool</h1>
       </Link>
 
       <div className="favorites d-flex gap-3 ms-auto">

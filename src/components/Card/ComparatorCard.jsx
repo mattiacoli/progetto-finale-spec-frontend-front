@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 export default function ComparatorCard({ carsToCompare }) {
   return (
     <>
       {carsToCompare.map(c => (
         <div className="col" key={c.id}>
-          <div className="card shadow-sm h-100 p-1">
+          <Link to={`/${c.id}`} className="card shadow-sm h-100 p-1 text-decoration-none">
             <img src={c.image} alt="" className="card-img-top img-fluid" style={{ height: "100%" }} />
             <div className="card-body">
 
@@ -51,7 +53,7 @@ export default function ComparatorCard({ carsToCompare }) {
               </table>
             </div>
 
-          </div>
+          </Link>
         </div>
       ))}
     </>
