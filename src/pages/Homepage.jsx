@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 import { API_URL, useGlobalContext } from "../context/GlobalContext"
-import CardCars from "../components/CarCard"
-import ComparatorCard from "../components/ComparatorCard"
+import CardCars from "../components/Card/CarCard"
+import ComparatorCard from "../components/Card/ComparatorCard"
 
 export default function Homepage() {
 

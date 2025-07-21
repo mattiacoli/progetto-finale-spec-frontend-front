@@ -6,6 +6,14 @@ export default function ComparatorCard({ carsToCompare }) {
           <div className="card shadow-sm h-100">
             <img src={c.image} alt="" className="card-img-top " style={{ height: "100%" }} />
             <div className="card-body">
+
+              <div className="tags d-flex gap-2 mb-3">
+                {c.tags.map(tag => (
+                  <span class="badge text-bg-primary fs-6">{tag}</span>
+                ))}
+
+              </div>
+
               <h2 className="card-title">{c.title}</h2>
               <p>{c.description}</p>
               <table class="table">
