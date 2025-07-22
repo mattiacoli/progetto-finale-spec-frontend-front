@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { debounce } from "../lib/utils";
 
 const GlobalContext = createContext()
 
@@ -32,22 +33,28 @@ function GlobalProvider({ children }) {
   }, [favorites]);
 
   // Search handler
+
+  const debouncedSearch = useCallback(
+    debounce((newQuery) => {
+      if (!newQuery || newQuery.trim() === '') {
+        setCars(allCars)
+        return
+      }
+
+      const searchParams = `search=${newQuery}${category ? `&category=${category}` : ''}`
+
+      fetch(`${API_URL}?${searchParams}`)
+        .then(res => res.json())
+        .then(data => setCars(data))
+        .catch(err => console.error('Errore nella ricerca:', err))
+    }, 500)
+    , [])
+
+
   const handleSearch = (e) => {
     const newQuery = e.target.value
     setQuery(newQuery)
-
-
-    if (!newQuery || newQuery.trim() === '') {
-      setCars(allCars)
-      return
-    }
-
-    const searchParams = `search=${newQuery}${category ? `&category=${category}` : ''}`
-
-    fetch(`${API_URL}?${searchParams}`)
-      .then(res => res.json())
-      .then(data => setCars(data))
-      .catch(err => console.error('Errore nella ricerca:', err))
+    debouncedSearch(newQuery)
   }
 
   // select category handler
