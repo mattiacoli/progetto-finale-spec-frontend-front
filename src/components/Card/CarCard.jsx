@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
+import { memo } from 'react'
 import styles from "./CarCard.module.css"
 
 
-export default function CardCars({ car, addFavorites, favorites, checked, onToggle }) {
+const CardCars = memo(({ car, addFavorites, favorites, checked, onToggle }) => {
 
   const isInFavorite = favorites.some(favorite => favorite.id === car.id);
 
@@ -40,4 +41,6 @@ export default function CardCars({ car, addFavorites, favorites, checked, onTogg
     </>
 
   )
-}
+})
+
+export default CardCars

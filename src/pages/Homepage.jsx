@@ -58,9 +58,6 @@ export default function Homepage() {
 
     const carResponses = await Promise.allSettled(carPromises)
     const cars = carResponses.map(car => car.value.car)
-
-    console.log('Cars to compare:', cars)
-
     setCarsToCompare(cars)
 
   }

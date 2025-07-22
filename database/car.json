@@ -1,0 +1,316 @@
+[
+  {
+    "title": "Volkswagen Golf 8",
+    "category": "Compatta",
+    "description": "Compatta versatile con consumi ridotti, ottima per la città e la guida quotidiana.",
+    "image": "https://autodesignmagazine.com/wp-content/uploads/2019/10/2019102501_VW_Golf.jpg",
+    "price": 28900,
+    "tags": [
+      "Volkswagen",
+      "Compatta",
+      "Citycar"
+    ],
+    "brand": "Volkswagen",
+    "modelYear": 2024,
+    "fuelType": "Benzina",
+    "horsepower": 150,
+    "transmission": "Manuale",
+    "colorOptions": [
+      "Bianco",
+      "Grigio",
+      "Blu"
+    ],
+    "mileage": 0,
+    "id": 1,
+    "createdAt": "2025-07-16T08:53:39.933Z",
+    "updatedAt": "2025-07-18T12:31:28.456Z"
+  },
+  {
+    "title": "Tesla Model S",
+    "category": "Berlina",
+    "description": "Berlina di lusso elettrica con autonomia elevata e prestazioni impressionanti.",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/2025-tesla-model-s-1-672d42e172407.jpg?crop=0.465xw:0.466xh;0.285xw,0.361xh&resize=2048:*",
+    "price": 89900,
+    "tags": [
+      "Tesla",
+      "Elettrico",
+      "Lusso"
+    ],
+    "brand": "Tesla",
+    "modelYear": 2024,
+    "fuelType": "Elettrico",
+    "horsepower": 1020,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Rosso",
+      "Bianco",
+      "Nero"
+    ],
+    "mileage": 0,
+    "id": 2,
+    "createdAt": "2025-07-16T08:53:44.461Z",
+    "updatedAt": "2025-07-18T12:32:48.265Z"
+  },
+  {
+    "title": "BMW Serie 3",
+    "category": "Berlina",
+    "description": "Berlina sportiva con comfort premium e tecnologie avanzate.",
+    "image": "https://www.autoscout24.it/cms-content-assets/57ocslzEcPtKW4KOJHwXep-dbd9f78edbcd7374e8338d8b4a85b39b-bmw-3er-limousine-front-1100.jpeg",
+    "price": 42900,
+    "tags": [
+      "BMW",
+      "Berlina",
+      "Sportiva"
+    ],
+    "brand": "BMW",
+    "modelYear": 2023,
+    "fuelType": "Benzina",
+    "horsepower": 255,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Blu",
+      "Grigio",
+      "Bianco"
+    ],
+    "mileage": 0,
+    "id": 3,
+    "createdAt": "2025-07-16T08:54:01.261Z",
+    "updatedAt": "2025-07-18T12:33:53.142Z"
+  },
+  {
+    "title": "Audi Q5",
+    "category": "SUV",
+    "description": "SUV compatto di lusso, con eccellente abitabilità e tecnologia avanzata.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ60AOcO1yw1IW89vB4dATMzb2PNBDGBgqew&s",
+    "price": 54500,
+    "tags": [
+      "Audi",
+      "SUV",
+      "Comfort"
+    ],
+    "brand": "Audi",
+    "modelYear": 2024,
+    "fuelType": "Diesel",
+    "horsepower": 261,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Argento",
+      "Bianco",
+      "Nero"
+    ],
+    "mileage": 0,
+    "id": 4,
+    "createdAt": "2025-07-16T08:54:11.232Z",
+    "updatedAt": "2025-07-18T12:34:34.151Z"
+  },
+  {
+    "title": "Mercedes Classe A",
+    "category": "Compatta",
+    "description": "Compatta premium con design moderno e interni tecnologici.",
+    "image": "https://immagini.alvolante.it/sites/default/files/styles/image_gallery_big/public/news_galleria/2018/02/mercedes-classe-a-2018-01-ufficiali_28.jpg",
+    "price": 33900,
+    "tags": [
+      "Mercedes",
+      "Compatta",
+      "Tecnologia"
+    ],
+    "brand": "Mercedes",
+    "modelYear": 2023,
+    "fuelType": "Benzina",
+    "horsepower": 188,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Rosso",
+      "Grigio",
+      "Bianco"
+    ],
+    "mileage": 0,
+    "id": 5,
+    "createdAt": "2025-07-16T08:54:34.664Z",
+    "updatedAt": "2025-07-18T12:35:09.394Z"
+  },
+  {
+    "title": "Toyota RAV4 Hybrid",
+    "category": "SUV",
+    "description": "SUV ibrido affidabile con bassi consumi e comfort elevato.",
+    "image": "https://content.presspage.com/uploads/1523/1920_2023-rav4-hybrid-gr-sport-dynamic-031.jpg?10000",
+    "price": 39500,
+    "tags": [
+      "Toyota",
+      "SUV",
+      "Ibrido"
+    ],
+    "brand": "Toyota",
+    "modelYear": 2024,
+    "fuelType": "Ibrido",
+    "horsepower": 219,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Bianco",
+      "Nero",
+      "Argento"
+    ],
+    "mileage": 0,
+    "id": 6,
+    "createdAt": "2025-07-16T08:54:48.736Z",
+    "updatedAt": "2025-07-18T12:35:54.826Z"
+  },
+  {
+    "title": "Audi A4",
+    "category": "Berlina",
+    "description": "Berlina elegante con tecnologia avanzata e comfort premium.",
+    "image": "https://static0.carbuzzimages.com/wordpress/wp-content/uploads/2024/03/601501-32.jpg",
+    "price": 42900,
+    "tags": [
+      "Audi",
+      "Berlina",
+      "Tecnologia"
+    ],
+    "brand": "Audi",
+    "modelYear": 2024,
+    "fuelType": "Diesel",
+    "horsepower": 201,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Blu",
+      "Argento",
+      "Bianco"
+    ],
+    "mileage": 0,
+    "id": 7,
+    "createdAt": "2025-07-16T08:55:03.270Z",
+    "updatedAt": "2025-07-18T12:36:32.433Z"
+  },
+  {
+    "title": "Mercedes Classe E",
+    "category": "Berlina",
+    "description": "Berlina premium spaziosa con interni lussuosi e prestazioni elevate.",
+    "image": "https://cdn.motor1.com/images/mgl/9mN9bv/s3/foto---nuova-mercedes-classe-e-2023.jpg",
+    "price": 59900,
+    "tags": [
+      "Mercedes",
+      "Berlina",
+      "Lusso"
+    ],
+    "brand": "Mercedes",
+    "modelYear": 2024,
+    "fuelType": "Ibrido",
+    "horsepower": 362,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Nero",
+      "Grigio",
+      "Bianco"
+    ],
+    "mileage": 0,
+    "id": 8,
+    "createdAt": "2025-07-16T08:55:21.279Z",
+    "updatedAt": "2025-07-18T12:37:04.045Z"
+  },
+  {
+    "title": "Ford Mustang Mach-E",
+    "category": "SUV",
+    "description": "SUV sportivo elettrico con grande autonomia e tecnologia avanzata.",
+    "image": "https://cdnwp.dealerk.com/eed49ed7/uploads/sites/222/2024/12/scegliere-ford-mustang-mach-e.jpg",
+    "price": 48900,
+    "tags": [
+      "Ford",
+      "SUV",
+      "Elettrico"
+    ],
+    "brand": "Ford",
+    "modelYear": 2023,
+    "fuelType": "Elettrico",
+    "horsepower": 346,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Blu",
+      "Nero",
+      "Rosso"
+    ],
+    "mileage": 0,
+    "id": 9,
+    "createdAt": "2025-07-16T08:55:34.457Z",
+    "updatedAt": "2025-07-18T12:37:42.406Z"
+  },
+  {
+    "title": "Tesla Model Y",
+    "category": "SUV",
+    "description": "SUV crossover elettrico premium con autopilot e prestazioni eccellenti.",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/homepage-model-y-2-promo-hero-desktop-cn-678091687fa3f.jpg?crop=0.580xw:0.534xh;0.223xw,0.381xh&resize=1200:*",
+    "price": 52900,
+    "tags": [
+      "Tesla",
+      "SUV",
+      "Elettrico",
+      "Premium"
+    ],
+    "brand": "Tesla",
+    "modelYear": 2024,
+    "fuelType": "Elettrico",
+    "horsepower": 384,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Bianco",
+      "Nero",
+      "Grigio",
+      "Blu"
+    ],
+    "mileage": 0,
+    "id": 10,
+    "createdAt": "2025-07-16T08:57:52.576Z",
+    "updatedAt": "2025-07-18T12:38:24.389Z"
+  },
+  {
+    "title": "Toyota Yaris Cross",
+    "category": "SUV",
+    "description": "SUV compatto, ideale per la città e la guida su strade extraurbane, con consumi ridotti e tecnologia ibrida.",
+    "image": "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-yaris-cross-2024-hub-design?qlt=80&wid=1600&fit=fit,1&ts=0&resMode=sharp2&op_usm=1.75,0.3,2,0&fmt=png-alpha",
+    "price": 26900,
+    "tags": [
+      "Toyota",
+      "SUV",
+      "Ibrida"
+    ],
+    "brand": "Toyota",
+    "modelYear": 2024,
+    "fuelType": "Elettrico",
+    "horsepower": 116,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Rosso",
+      "Argento",
+      "Nero"
+    ],
+    "mileage": 0,
+    "id": 11,
+    "createdAt": "2025-07-21T16:30:46.252Z",
+    "updatedAt": "2025-07-21T16:36:24.443Z"
+  },
+  {
+    "title": "Fiat 500e",
+    "category": "Compatta",
+    "description": "Citycar elettrica dallo stile iconico, perfetta per la mobilità urbana senza emissioni.",
+    "image": "https://www.abarth.it/content/dam/abarth/gamma/500e-range/gallery-1/2/New_Abarth_500e_Range-Gallery_1-card-02-Tablet-818X413.jpg",
+    "price": 30500,
+    "tags": [
+      "Fiat",
+      "Elettrica",
+      "Citycar"
+    ],
+    "brand": "Fiat",
+    "modelYear": 2024,
+    "fuelType": "Elettrico",
+    "horsepower": 118,
+    "transmission": "Automatico",
+    "colorOptions": [
+      "Bianco",
+      "Verde",
+      "Azzurro"
+    ],
+    "mileage": 0,
+    "id": 12,
+    "createdAt": "2025-07-21T16:31:24.695Z",
+    "updatedAt": "2025-07-21T16:35:16.227Z"
+  }
+]

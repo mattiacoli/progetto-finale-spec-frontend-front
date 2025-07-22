@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function ComparatorCard({ carsToCompare }) {
+import { memo } from 'react'
+
+const ComparatorCard = memo(({ carsToCompare }) => {
   return (
     <>
       {carsToCompare.map(c => (
@@ -10,15 +12,15 @@ export default function ComparatorCard({ carsToCompare }) {
             <div className="card-body">
 
               <div className="tags d-flex gap-1 mb-3">
-                {c.tags.map(tag => (
-                  <span class="badge text-bg-primary">{tag}</span>
+                {c.tags.map((tag, i) => (
+                  <span key={i} className="badge text-bg-primary">{tag}</span>
                 ))}
 
               </div>
 
               <h2 className="card-title fw-bold">{c.title}</h2>
               <p>{c.description}</p>
-              <table class="table">
+              <table className="table">
 
                 <tbody>
                   <tr>
@@ -58,4 +60,6 @@ export default function ComparatorCard({ carsToCompare }) {
       ))}
     </>
   )
-}
+})
+
+export default ComparatorCard
