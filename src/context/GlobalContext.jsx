@@ -28,6 +28,8 @@ function GlobalProvider({ children }) {
       .catch(err => console.error(err))
   }, [])
 
+  // localStorage for favorites
+
   useEffect(() => {
     localStorage.setItem("cars", JSON.stringify(favorites));
   }, [favorites]);

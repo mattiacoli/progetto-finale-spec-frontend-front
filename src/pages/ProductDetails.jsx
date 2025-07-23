@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { API_URL, useGlobalContext } from '../context/GlobalContext'
 
 
 export default function ProductDetail() {
 
+  const navigator = useNavigate()
   const { id } = useParams()
   const [selectedCar, setSelectedCar] = useState({})
   const { addFavorites, favorites } = useGlobalContext()
@@ -16,8 +17,9 @@ export default function ProductDetail() {
     fetch(`${API_URL}/${id}`)
       .then(res => res.json())
       .then(data => {
-        data.success &&
-          setSelectedCar(data.car)
+        data.success ? setSelectedCar(data.car) : navigator("*")
+      }).catch(err => {
+        console.log(err.message);
       })
   }, [id])
 

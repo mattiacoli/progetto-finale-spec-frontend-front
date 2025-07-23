@@ -84,4 +84,39 @@ main {
     background-color: #0a173a;
   }
 
+  .not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+  }
+
+  .not-found-content {
+    background: linear-gradient(106deg, #1f346de3 0%, rgba(21, 124, 189, 0.8) 100%);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+  }
+
+  .not-found-content h1 {
+    font-size: 8rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #c9d5f7;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    font-family: 'Bungee Shade', system-ui;
+  }
+
+  .not-found-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .not-found-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
 }

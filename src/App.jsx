@@ -6,6 +6,7 @@ import DefaulLayout from "./layouts/DefaultLayouts"
 // pages
 import Homepage from "./pages/Homepage"
 import ProductDetail from "./pages/ProductDetails"
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route Component={DefaulLayout} >
             <Route path="/" Component={Homepage} />
             <Route path="/:id" Component={ProductDetail} />
-
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
