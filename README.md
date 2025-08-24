@@ -52,6 +52,7 @@ Progetto sviluppato con **React** in JavaScript
     - Nessun elemento selezionato nel comparatore
     - Pagina 404
 
+ <img src="public/404.png" width='500'>
 
     ## Architettura dei componenti
 
