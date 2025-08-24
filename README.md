@@ -28,13 +28,13 @@ Progetto sviluppato con **React** in JavaScript
     - Filtro per categoria (category)
     - Ordinamento alfabetico per title o category (A-Z e Z-A)
 
-      <img src="public/homepage.png" width='800'>
+<img src="public/homepage.png" width='800'>
 
 3. **Pagina di dettaglio** per ogni record, con visualizzazione estesa delle sue proprietà (es. price, description, brand, ecc.)
 
 4. **Comparatore di 2 o più record**  visualizzati affiancati per confrontarne le caratteristiche.
 
-   <img src="public/comparatore.png" width='800'>
+<img src="public/comparatore.png" width='800'>
 
 
 
@@ -43,7 +43,7 @@ Progetto sviluppato con **React** in JavaScript
     - I preferiti sono consultabili in ogni sezione dell’app tramite componente dedicato
     - salvataggio in `localStorage` per mantenere la persistenza del dato
 
- <img src="public/preferiti.png" width='500'>
+<img src="public/preferiti.png" width='500'>
 
 
 6. **Gestione degli stati vuoti** come:
@@ -52,7 +52,7 @@ Progetto sviluppato con **React** in JavaScript
     - Nessun elemento selezionato nel comparatore
     - Pagina 404
 
- <img src="public/404.png" width='500'>
+<img src="public/404.png" width='800'>
 
     ## Architettura dei componenti
 
