@@ -1,4 +1,5 @@
-![](src/assets/logo.png)
+<img src="src/assets/logo.png" width='100'>
+
 ![version](https://img.shields.io/badge/version-v1.0-green?style=plastic) ![React](https://img.shields.io/badge/React-19.1.0-informational?style=plastic) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.7-brightgreen?style=plastic)
 # PROGETTO PRATICO COMPARATORE DI RECORD
 
@@ -26,22 +27,23 @@ Progetto sviluppato con **React** in JavaScript
     - Barra di ricerca per cercare nei titoli (title), implementato **debounce** per migliorare la UX ed evitare chiamate API inutili
     - Filtro per categoria (category)
     - Ordinamento alfabetico per title o category (A-Z e Z-A)
-      
-![](public/homepage.png)
+
+      <img src="public/homepage.png" width='800'>
 
 3. **Pagina di dettaglio** per ogni record, con visualizzazione estesa delle sue proprietà (es. price, description, brand, ecc.)
 
 4. **Comparatore di 2 o più record**  visualizzati affiancati per confrontarne le caratteristiche.
-   
-![](public/comparatore.png)
+
+   <img src="public/comparatore.png" width='800'>
+
 
 
 5. **Sistema di preferiti** sempre accessibile e aggiornabile:
     - L’utente può aggiungere o rimuovere record dai preferiti in qualsiasi momento
     - I preferiti sono consultabili in ogni sezione dell’app tramite componente dedicato
     - salvataggio in `localStorage` per mantenere la persistenza del dato
-    
-![](public/preferiti.png)
+
+ <img src="public/preferiti.png" width='500'>
 
 
 6. **Gestione degli stati vuoti** come:
