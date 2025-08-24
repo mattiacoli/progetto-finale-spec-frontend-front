@@ -26,16 +26,19 @@ Progetto sviluppato con **React** in JavaScript
     - Barra di ricerca per cercare nei titoli (title), implementato **debounce** per migliorare la UX ed evitare chiamate API inutili
     - Filtro per categoria (category)
     - Ordinamento alfabetico per title o category (A-Z e Z-A)
+![](public/homepage.png)
 
 3. **Pagina di dettaglio** per ogni record, con visualizzazione estesa delle sue proprietà (es. price, description, brand, ecc.)
 
 4. **Comparatore di 2 o più record**  visualizzati affiancati per confrontarne le caratteristiche.
-
+   
+![](public/comparatore.png)
 5. **Sistema di preferiti** sempre accessibile e aggiornabile:
     - L’utente può aggiungere o rimuovere record dai preferiti in qualsiasi momento
     - I preferiti sono consultabili in ogni sezione dell’app tramite componente dedicato
     - salvataggio in `localStorage` per mantenere la persistenza del dato
-
+    
+![](public/preferiti.png)
 6. **Gestione degli stati vuoti** come:
     - Nessun risultato trovato
     - Lista preferiti vuota
