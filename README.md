@@ -1,5 +1,5 @@
+![](src/assets/logo.png)
 ![version](https://img.shields.io/badge/version-v1.0-green?style=plastic) ![React](https://img.shields.io/badge/React-19.1.0-informational?style=plastic) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.7-brightgreen?style=plastic)
-
 # PROGETTO PRATICO COMPARATORE DI RECORD
 
 **SPA** che simula l’esperienza di un utente non autenticato, che può:
