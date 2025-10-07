@@ -79,6 +79,16 @@ main {
     background-position: center;
   }
 
+  .searchbar {
+    input {
+      text-align: center;
+    }
+
+    input::placeholder {
+      color: #aaadb6;
+    }
+  }
+
   .category {
     border-radius: 40px;
     background-color: #0a173a;
@@ -89,7 +99,10 @@ main {
       color: white;
     }
 
-    button:hover,
+    button:hover {
+      border: 1px solid white;
+    }
+
     button:active,
     button:focus {
       background-color: white;
@@ -101,8 +114,6 @@ main {
     margin-top: 2rem;
     background-color: #c9d5f7;
     padding: 2rem;
-    border-radius: 3rem;
-
     color: #1F346D;
   }
 

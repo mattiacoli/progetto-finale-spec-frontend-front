@@ -73,14 +73,13 @@ export default function Homepage() {
       <section className="hero d-flex flex-column-reverse">
 
         <div className="container">
+          {/* Searchbar */}
           <Searchbar query={query} handleSearch={handleSearch} />
         </div>
-
       </section>
 
 
       <div className="container my-4">
-        {/* Searchbar */}
 
         {/* Category Link */}
         <div className="d-flex justify-content-center">
@@ -91,7 +90,7 @@ export default function Homepage() {
         {/* Sort Action */}
         <div className="sort mb-3 d-flex gap-2 align-item-center justify-content-between">
           <div className="sort_action">
-            <button className="btn btn-light" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>
+            <button className="btn btn-light rounded-5" onClick={handleSort}>{`Ordina ${sortOrder === 'asc' ? "↓" : "↑"}`}</button>
             <label htmlFor="title" className="p-2">
               <input
                 className="me-1"
@@ -118,7 +117,7 @@ export default function Homepage() {
 
           {/* Compare Button */}
           <button
-            className="btn btn-primary"
+            className="btn btn-primary rounded-5"
             onClick={() => getComparison(idsToCompare)}
             disabled={idsToCompare.length === 0}
           >Compara
@@ -145,20 +144,22 @@ export default function Homepage() {
           )}
         </div>
 
-        {/* Comparator */}
-        <section className="w-100">
-
-          <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
-            <h1 className="text-center mb-3">COMPARATORE</h1>
-            <hr />
-            <div className="row row-cols-3 my-4 gy-3">
-              <ComparatorCard carsToCompare={carsToCompare} />
-            </div>
-          </div>
-
-        </section>
 
       </div>
+
+
+      {/* Comparator */}
+      <section>
+
+        <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
+          <h1 className="text-center mb-3">COMPARATORE</h1>
+          <hr />
+          <div className="row row-cols-3 my-4 gy-3">
+            <ComparatorCard carsToCompare={carsToCompare} />
+          </div>
+        </div>
+
+      </section>
 
 
     </>
