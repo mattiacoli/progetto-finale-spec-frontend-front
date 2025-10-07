@@ -24,12 +24,15 @@ const CardCars = memo(({ car, addFavorites, favorites, checked, onToggle }) => {
             <p className={styles.cardText}>{car.category}</p>
           </div>
           <div className={`${styles.cardFooter} d-flex justify-content-between align-items-center`}>
-            <input
-              type="checkbox"
-              checked={checked}
-              onChange={() => onToggle(car.id)}
-              className={`form-check-input ${styles.checkbox}`}
-            />
+            <div>
+              <input
+                type="checkbox"
+                checked={checked}
+                onChange={() => onToggle(car.id)}
+                className={`form-check-input ${styles.checkbox}`}
+              />
+              <small className="ms-1">seleziona per comparare</small>
+            </div>
             <button
               className={`${styles.favoriteBtn}`}
               onClick={handleAddToFavorites}>

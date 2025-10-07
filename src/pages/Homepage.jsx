@@ -146,7 +146,7 @@ export default function Homepage() {
         </div>
 
         {/* Comparator */}
-        <section>
+        <section className="w-100">
 
           <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
             <h1 className="text-center mb-3">COMPARATORE</h1>
