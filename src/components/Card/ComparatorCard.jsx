@@ -28,28 +28,28 @@ const ComparatorCard = memo(({ carsToCompare }) => {
                     <td>{c.brand}</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Anno</td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-calendar"></i> Anno</td>
                     <td>{c.modelYear}</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Categoria</td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-car-front-fill"></i> Categoria</td>
                     <td>{c.category}</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Cambio</td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-joystick"></i> Cambio</td>
                     <td>{c.transmission}</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Carburante</td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-fuel-pump"></i> Carburante</td>
                     <td>{c.fuelType}</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Potenza</td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-rocket-takeoff"></i> Potenza</td>
                     <td>{c.horsepower} CV</td>
                   </tr>
                   <tr>
-                    <td scope="row" className="fw-bold">Prezzo</td>
-                    <td className="fw-bold">{c.price} € </td>
+                    <td scope="row" className="fw-bold"><i class="bi bi-piggy-bank"></i> Prezzo</td>
+                    <td className="fw-bold">{Number(c.price).toLocaleString()} € </td>
                   </tr>
                 </tbody>
               </table>

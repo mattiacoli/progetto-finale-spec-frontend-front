@@ -140,7 +140,7 @@ export default function Homepage() {
               onToggle={handleCompare}
             />
           )) : (
-            <p className="text-center fs-4">Nessun risultato trovato</p>
+            <p className="text-center fs-3">Nessun risultato trovato</p>
           )}
         </div>
 
@@ -154,7 +154,7 @@ export default function Homepage() {
         <div className={carsToCompare.length > 0 ? `comparator mb-4 shadow` : "comparator d-none"} ref={comparatorRef}>
           <h1 className="text-center mb-3">COMPARATORE</h1>
           <hr />
-          <div className="row row-cols-3 my-4 gy-3">
+          <div className="row row-cols-3 my-4 gy-3 justify-content-center">
             <ComparatorCard carsToCompare={carsToCompare} />
           </div>
         </div>

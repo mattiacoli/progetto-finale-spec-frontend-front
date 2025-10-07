@@ -21,7 +21,7 @@ export default function ProductDetail() {
       }).catch(err => {
         console.log(err.message);
       })
-  }, [id])
+  }, [id, navigator])
 
 
   return (
@@ -43,13 +43,15 @@ export default function ProductDetail() {
               <span className="badge text-bg-light" key={tag}>{tag}</span>
             ))}
           </div>
-          <p className='fw-bold fs-2'>{price} €</p>
+          <p className='fw-bold fs-2'>{Number(price).toLocaleString()} €</p>
           <p className='fs-6'>{description}</p>
-          <p><strong>Categoria : </strong> {category}</p>
-          <p><strong>Motore : </strong> {fuelType}</p>
-          <p><strong>Potenza : </strong> {horsepower} CV</p>
-          <p><strong>Cambio : </strong> {transmission}</p>
-          <button className='btn btn-primary mt-5' onClick={() => addFavorites(selectedCar)}>Aggiungi ai preferiti</button>
+          <p><strong><i class="bi bi-car-front-fill"></i>  Categoria : </strong> {category}</p>
+          <p><strong><i class="bi bi-fuel-pump"></i> Carburante:</strong> {fuelType}</p>
+          <p><strong><i class="bi bi-rocket-takeoff"></i> Potenza : </strong> {horsepower} CV</p>
+          <p><strong><i class="bi bi-joystick"></i> Cambio : </strong> {transmission}</p>
+          <button className='btn btn-primary mt-5' onClick={() => addFavorites(selectedCar)}>
+            {favorites.some(car => car.id === selectedCar.id) ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'}
+          </button>
         </div>
 
       </div>
