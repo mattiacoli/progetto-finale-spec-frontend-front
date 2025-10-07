@@ -65,9 +65,18 @@ header {
 main {
 
   font-family: 'Poppins', sans-serif;
+  margin-top: 6rem;
 
   input {
-    background-color: rgba(0, 0, 0, 0.301) !important;
+    background-color: rgba(0, 0, 0, 0.674) !important;
+  }
+
+  .hero {
+    height: 400px;
+    background-image: url(https://wallpapers-clan.com/wp-content/uploads/2024/06/racing-car-night-speed-desktop-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   .category {

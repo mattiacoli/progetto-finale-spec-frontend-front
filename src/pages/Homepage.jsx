@@ -5,6 +5,7 @@ import { API_URL, useGlobalContext } from "../context/GlobalContext"
 import CardCars from "../components/Card/CarCard"
 import ComparatorCard from "../components/Card/ComparatorCard"
 import CategoryLink from "../components/CategoryLink"
+import Searchbar from "../components/Searchbar"
 
 export default function Homepage() {
 
@@ -69,18 +70,17 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="container my-4">
-        {/* Searchbar */}
-        <div className="searchbar mb-3 d-flex justify-content-center">
-          <input
-            type="text"
-            placeholder="Cerca..."
-            className="form-control p-2 rounded-5 text-white"
-            value={query}
-            onChange={handleSearch}
-          />
+      <section className="hero d-flex flex-column-reverse">
+
+        <div className="container">
+          <Searchbar query={query} handleSearch={handleSearch} />
         </div>
 
+      </section>
+
+
+      <div className="container my-4">
+        {/* Searchbar */}
 
         {/* Category Link */}
         <div className="d-flex justify-content-center">
