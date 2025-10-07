@@ -50,7 +50,7 @@ function GlobalProvider({ children }) {
         .then(data => setCars(data))
         .catch(err => console.error('Errore nella ricerca:', err))
     }, 500)
-    , [])
+    , [allCars, category])
 
 
   const handleSearch = (e) => {
@@ -72,7 +72,7 @@ function GlobalProvider({ children }) {
       }
       const data = await response.json()
       setCars(data)
-    } catch (error) {
+    } catch {
       throw new Error('Errore nel recupero dei dati')
     }
   }

@@ -70,6 +70,33 @@ main {
     background-color: rgba(0, 0, 0, 0.301) !important;
   }
 
+  .category {
+    border-radius: 40px;
+    background-color: #0a173a;
+    width: 400px;
+
+    button {
+      border-radius: 40px;
+      color: white;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
+
+    button:hover,
+    button:active,
+    button:focus {
+      background-color: white;
+      color: rgb(6, 6, 6);
+      transform: scale(1.05);
+    }
+
+    button.active {
+      background-color: white;
+      color: rgb(6, 6, 6);
+      transform: scale(1.02);
+    }
+  }
+
   .comparator {
     margin-top: 2rem;
     background-color: #c9d5f7;

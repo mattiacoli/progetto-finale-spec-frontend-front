@@ -1,7 +1,10 @@
 import { useRef, useState, useEffect } from "react"
 import { API_URL, useGlobalContext } from "../context/GlobalContext"
+
+// Components
 import CardCars from "../components/Card/CarCard"
 import ComparatorCard from "../components/Card/ComparatorCard"
+import CategoryLink from "../components/CategoryLink"
 
 export default function Homepage() {
 
@@ -15,7 +18,6 @@ export default function Homepage() {
   const comparatorRef = useRef()
 
 
-  const category = ["compatta", "berlina", "suv"]
 
   const handleCompare = (carId) => {
     if (!idsToCompare.includes(carId)) {
@@ -68,9 +70,8 @@ export default function Homepage() {
   return (
     <>
       <div className="container my-4">
-
+        {/* Searchbar */}
         <div className="searchbar mb-3 d-flex justify-content-center">
-
           <input
             type="text"
             placeholder="Cerca..."
@@ -82,11 +83,8 @@ export default function Homepage() {
 
 
         {/* Category Link */}
-        <div className="category mb-3 d-flex justify-content-center gap-2">
-          {category.map((c, i) => (
-            <button key={i} className="btn btn-outline-light" value={c} onClick={handleClick}>{c.toUpperCase()}</button>
-          ))}
-          <button className="btn btn-outline-light" value="" onClick={handleClick}>TUTTE</button>
+        <div className="d-flex justify-content-center">
+          <CategoryLink handleClick={handleClick} />
         </div>
 
 
@@ -122,7 +120,9 @@ export default function Homepage() {
           <button
             className="btn btn-primary"
             onClick={() => getComparison(idsToCompare)}
-          >Compara</button>
+            disabled={idsToCompare.length === 0}
+          >Compara
+          </button>
 
         </div>
 
